@@ -20,10 +20,10 @@ export default function Home() {
       return;
     }
     try {
-      const resposne = await axios.post("/api/synonyms/add", { word, synonym });
+      const response  = await axios.post("/api/synonyms/add", { word, synonym });
 
-      if (resposne.data.message) {
-        alert(resposne.data.message);
+      if (response.data.message) {
+        alert(response.data.message);
         setWord("");
         setSynonym("");
         setSearchWord("");

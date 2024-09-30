@@ -37,6 +37,12 @@ const union = (word1: string, word2: string) => {
   const root2 = find(word2);
 
   if (root1 !== root2) {
+    try {
+      // Database operations here
+    } catch (error) {
+      console.error("Database operation failed:", error);
+      throw new Error("Database operation failed");
+    }
     const group1Row = db
       .prepare("SELECT synonyms FROM groups WHERE groupId = ?")
       .get(root1) as GroupRow | undefined;
