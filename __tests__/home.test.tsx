@@ -11,7 +11,6 @@ describe('Home Component', () => {
   beforeEach(() => {
     window.alert = jest.fn();
     mock.reset();
-    mock.onPost('/api/clearData').reply(200, { message: 'Data cleared successfully!' });
   });
 
   test('renders the Home component with Add and Search sections', () => {

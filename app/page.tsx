@@ -13,13 +13,6 @@ export default function Home() {
   const [searchError, setSearchError] = useState<string>("");
   const [addSynonymError, setAddSynonymError] = useState<string>("");
 
-  useEffect(() => {
-    const clearDatabase = async () => {
-      await axios.post("/api/clearData");
-    };
-    clearDatabase();
-  }, []);
-
   const addSynonym = async (): Promise<void> => {
     // Check if word or synonym is empty
     if (!word.trim() || !synonym.trim()) {
