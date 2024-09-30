@@ -1,6 +1,6 @@
 import db from "@/lib/db";
 
-export async function POST(req: Request): Promise<Response> {
+export async function POST(): Promise<Response> {
   try {
     // Clear the 'synonyms' and 'groups' tables in the SQLite database
     db.prepare("DELETE FROM synonyms").run();

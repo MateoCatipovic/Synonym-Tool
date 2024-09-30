@@ -37,10 +37,10 @@ export default function Home() {
         setResult([]);
         setAddSynonymError("");
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error("Error adding synonym:", error);
       alert("Fail to add synonym!");
-      setAddSynonymError(error.message);
+      setAddSynonymError("Error adding synonym");
     }
   };
 
@@ -58,16 +58,16 @@ export default function Home() {
         setResult(resposne.data.synonyms);
         setSearchError("");
       }
-    } catch (error: any) {
+    } catch (error) {
       console.error("Failed to search synonym", error);
-      setSearchError("Failed to search synonym"); 
+      setSearchError("Failed to search synonym");
     }
   };
 
   return (
     <div className="flex flex-col items-center mt-4">
       <h2 className="mb-12">Synonyms Tool</h2>
-       {/* Add component */}
+      {/* Add component */}
       <div className="flex flex-col mx-4 w-[350px] sm:w-auto">
         <p className="text-2xl mb-4">Add Synonym</p>
         <div className="mb-8">
